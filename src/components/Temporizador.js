@@ -4,7 +4,7 @@ import Botao from "./Botao";
 /* import LabelParcial from "./LabelParcial"; */
 import InputTemporizador from "./InputTemporizador";
 
-const Contador = (props) => {
+const Temporizador = (props) => {
     const [segundos, setSegundos] = useState(10);
     const [minutos, setMinutos] = useState(0);
     const [horas, setHoras] = useState(0);
@@ -70,7 +70,13 @@ const Contador = (props) => {
     }, [minutos]);
 
     return (
-        <div>
+        <div
+            class="tab-pane fade show active"
+            id="temporizador"
+            role="tabpanel"
+            aria-labelledby="aba-temporizador"
+        >
+            <LabelCronometro name="👺 Temporizador ⏰" />
             <LabelCronometro
                 name={`${formatarTempo(horas)} : ${formatarTempo(
                     minutos
@@ -102,4 +108,4 @@ const Contador = (props) => {
         </div>
     );
 };
-export default Contador;
+export default Temporizador;
